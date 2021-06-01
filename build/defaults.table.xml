@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table name="DefaultDescriptions" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../xsd/table.xsd">
+    <desc>Standardwerte für Tabellenfelder</desc>
+    <adoc><![CDATA[
+Diese Tabelle gibt es nicht in der Datenbank.
+Sie enthält lediglich Beschreibungen für Standardfelder in Tabellen.
+So wird erreicht, dass dieser Code nicht in jeder Datei erscheint. 
+    ]]></adoc>
+    <column name="KeyLong">
+        <integer identity="true" />
+        <desc>Interne ID</desc>
+        <adoc><![CDATA[
+Dieses Feld enthält den internen Schlüssel in der Datenbank.
+Er wird für alle Verweise in anderen Tabellen auf einen Datensatz in dieser Tabelle verwendet.
+
+Dieser Schlüsselwert ist für den Anwender ''unsichtbar''.
+        ]]></adoc>
+    </column>
+    <column name="KeyText">
+        <varchar length="20" nullable="false"/>
+        <desc>Matchcode</desc>
+        <adoc><![CDATA[
+Dieses Feld enthält den benutzerdefinierten Schlüssel in der Datenbank.
+Er wird in allen Lookup-Feldern auf den Masken angezeigt.
+Er wird in der Regel auch im Index von Tabellen / Masken angezeigt, die auf einen Datensatz in dieser Tabelle verweisen.
+
+Dieser Schlüsselwert kann vom Anwender nicht geändert werden. 
+Dazu muss ein neuer Datensatz angelegt werden.
+        ]]></adoc>
+    </column>
+    <column name="Description">
+        <varchar length="100" />
+        <desc>Beschreibung</desc>
+        <adoc><![CDATA[
+In diesem Feld kann eine nähere Beschreibung für das Konto hinterlegt werden.
+        ]]></adoc>
+    </column>
+    <column name="LastAction">
+        <integer nullable="false"/>
+        <desc>Art der letzten Änderung</desc>
+        <adoc><![CDATA[
+In diesem Feld wird bei jeder relevanten Änderung durch einen Benutzer die Art der Änderung gespeichert.
+Folgende Arten sind bekannt
+
+[options="header",cols=">,"]
+|======
+| Wert | Bedeutung
+| 1 | Datensatz wurde neu hinzugefügt
+| 2 | Datensatz wurde geändert
+| -1 | Datensatz wurde gelöscht
+|======
+        ]]></adoc>
+    </column>
+    <column name="LastDate">
+        <datetime nullable="false"/>
+        <desc>Zeitpunkt der letzten Änderung</desc>
+        <adoc><![CDATA[
+In diesem Feld wird bei jeder relevanten Änderung der jeweilige Zeitpunkt gespeichert.
+        ]]></adoc>
+    </column>
+    <column name="LastUser">
+        <varchar length="50" nullable="false"/>
+        <desc>Benutzer der letzten Änderung</desc>
+        <adoc><![CDATA[
+In diesem Feld wird bei jeder relevanten Änderung durch einen Benutzer dessen Anmeldename gespeichert.
+        ]]></adoc>
+    </column>
+</table>
