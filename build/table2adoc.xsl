@@ -177,15 +177,11 @@ Folgende Zeilen werden automatisch angelegt:
 [options="header"]
 |======
 </xsl:text>
-
 		<xsl:apply-templates select="column/@refid" />
-
 		<xsl:apply-templates select="row" />
-
 		<xsl:text>
 |======
 </xsl:text>
-
 	</xsl:template>
 
 	<xsl:template match="column/@refid">
@@ -194,18 +190,15 @@ Folgende Zeilen werden automatisch angelegt:
 		<xsl:text> </xsl:text>
 	</xsl:template>
 
-
 	<xsl:template match="row">
 		<xsl:text> <xsl:apply-templates select="value" /> 
 </xsl:text>
 	</xsl:template>
-
 
 	<xsl:template match="value">
 		<xsl:text>| </xsl:text>
 		<xsl:value-of select="." />
 		<xsl:text> </xsl:text>
 	</xsl:template>
-
 
 </xsl:stylesheet>
