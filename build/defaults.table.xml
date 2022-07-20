@@ -32,7 +32,7 @@ Dazu muss ein neuer Datensatz angelegt werden.
         <varchar length="100" />
         <desc>Beschreibung</desc>
         <adoc><![CDATA[
-In diesem Feld kann eine nähere Beschreibung für das Konto hinterlegt werden.
+In diesem Feld kann eine nähere Beschreibung für den Datensatz hinterlegt werden.
         ]]></adoc>
     </column>
     <column name="LastAction">
@@ -64,5 +64,15 @@ In diesem Feld wird bei jeder relevanten Änderung der jeweilige Zeitpunkt gespe
         <adoc><![CDATA[
 In diesem Feld wird bei jeder relevanten Änderung durch einen Benutzer dessen Anmeldename gespeichert.
         ]]></adoc>
+    </column>
+     <column name="SecurityToken">
+        <varchar length="10" nullable="true"/>
+        <desc>Tag für die RowLevelSecurity</desc>
+        <adoc><![CDATA[
+In dieser Spalte werden den verschiedenen Einträgen SecurityToken zugesprochen, mithilfe derer man die Einträge nur für bestimmte Nutzer und Nutzergruppen zugänglich machen kann. 
+Ist die Spalte leer, darf jeder sie sehen. 
+Damit auf die RowLevelSecurity geachtet wird muss das RowLevelSecurity-Flag in der xtcasLuUserPrivilegeUserGroup auf 1 gesetzt werden.
+Ansonsten wird die Spalte ignoriert.
+       ]]></adoc>
     </column>
 </table>
