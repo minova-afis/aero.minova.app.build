@@ -6,7 +6,7 @@
 
     <!-- Ouput-Deklaration -->
 
-    <xsl:output indent="yes" omit-xml-declaration="no" encoding="UTF-8" xml:space="default" method="xml"/>
+    <xsl:output indent="no" omit-xml-declaration="no" encoding="UTF-8" xml:space="default" method="xml"/>
 
     <!-- Root-Element "form" durchlaufen -->
 
